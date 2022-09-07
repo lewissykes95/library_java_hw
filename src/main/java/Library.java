@@ -1,4 +1,3 @@
-import java.awt.print.Book;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -10,7 +9,7 @@ public class Library {
 
     public Library(int capacity) {
         this.capacity = capacity;
-        this.books = new ArrayList<Book>();
+        this.books = new ArrayList<>();
     }
 
     public int bookAmount() {
@@ -26,6 +25,20 @@ public class Library {
             this.books.add(book);
             return true;
         } else {
+            return false;
+        }
+    }
+    public void loanBook(Book book, Borrower borrower) {
+        if(this.books.contains(book)){
+            this.books.remove(book);
+            borrower.addBook(book);
+        }
+    }
+
+    public boolean checkInStock(Book book) {
+        if(this.books.contains(book)){
+            return true;
+        }else {
             return false;
         }
     }
