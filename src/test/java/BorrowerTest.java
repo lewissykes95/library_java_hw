@@ -9,7 +9,6 @@ public class BorrowerTest {
     Book book;
 
 
-
     @Before
     public void setUp() {
         borrower = new Borrower("David");
