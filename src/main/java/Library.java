@@ -8,7 +8,8 @@ public class Library {
 
     private int capacity;
 
-    public Library() {
+    public Library(int capacity) {
+        this.capacity = capacity;
         this.books = new ArrayList<Book>();
     }
 
